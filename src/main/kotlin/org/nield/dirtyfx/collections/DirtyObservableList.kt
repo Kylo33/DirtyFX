@@ -21,7 +21,7 @@ class DirtyObservableList<T> private constructor(_originalList: List<T> = listOf
 
 
     private val listener = ListChangeListener<T> { _ ->
-        _isDirtyProperty.set(_originalList != this)
+        _isDirtyProperty.set(originalList != this)
     }
     init {
         addListener(WeakListChangeListener(listener))
